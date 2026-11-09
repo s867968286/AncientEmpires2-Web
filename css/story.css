@@ -1,0 +1,4 @@
+/* 剧情弹窗：让正文从右上角关闭按钮下方开始，避免宽屏时文字被关闭按钮遮挡 */
+.story-view .scroll-area {
+	padding-top: 2.6rem;
+}
