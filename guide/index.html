@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>远古帝国2 · 数据攻略</title>
+<style>
+  :root{
+    --bg:#0e1522; --bg2:#131c2c; --panel:#182337; --panel2:#1e2b42;
+    --line:#2a3a55; --txt:#e8eef8; --sub:#9db0cc; --muted:#6f83a3;
+    --gold:#e7b45a; --blue:#5aa9e6; --green:#5ec98a; --red:#e56b6b; --purple:#b28ae6; --cyan:#57c9c2;
+    --atk:#e56b6b; --def:#5aa9e6; --mov:#5ec98a; --range:#e7b45a;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;font-family:"Segoe UI","Microsoft YaHei",system-ui,sans-serif;
+    color:var(--txt);
+    background:radial-gradient(1200px 600px at 15% -10%,#1b2a45 0%,transparent 60%),
+               radial-gradient(1000px 500px at 100% 0%,#241b3a 0%,transparent 55%),
+               var(--bg);
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--blue)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+  /* hero */
+  .hero{padding:46px 0 26px;text-align:center}
+  .hero h1{margin:0 0 8px;font-size:34px;letter-spacing:2px;
+    background:linear-gradient(90deg,#f3d08a,#e7b45a 40%,#5aa9e6 90%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+  .hero p{margin:0;color:var(--sub);font-size:14px}
+  .hero .badges{margin-top:14px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+  .hero .badges span{background:var(--panel);border:1px solid var(--line);color:var(--sub);
+    padding:5px 12px;border-radius:999px;font-size:12.5px}
+  /* tabs */
+  .tabs{position:sticky;top:0;z-index:20;background:rgba(14,21,34,.86);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-bottom:26px}
+  .tabs .inner{display:flex;gap:6px;overflow-x:auto;padding:10px 0}
+  .tab{white-space:nowrap;border:1px solid transparent;background:transparent;color:var(--sub);
+    padding:9px 16px;border-radius:10px;cursor:pointer;font-size:14.5px;font-weight:600;transition:.18s}
+  .tab:hover{color:var(--txt);background:var(--panel)}
+  .tab.active{color:#0e1522;background:linear-gradient(90deg,#e7b45a,#f0c878);box-shadow:0 4px 16px rgba(231,180,90,.25)}
+  /* panel */
+  .panel{display:none;animation:fade .25s ease}
+  .panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .section-title{font-size:21px;margin:6px 0 4px;font-weight:800}
+  .section-title .em{color:var(--gold)}
+  .section-desc{color:var(--sub);font-size:13.5px;margin:0 0 18px}
+  .subhead{font-size:16px;font-weight:700;margin:30px 0 12px;display:flex;align-items:center;gap:9px}
+  .subhead::before{content:"";width:4px;height:16px;border-radius:2px;background:var(--gold)}
+  /* toolbar */
+  .toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{background:var(--panel);border:1px solid var(--line);color:var(--sub);padding:7px 14px;
+    border-radius:999px;cursor:pointer;font-size:13px;font-weight:600;transition:.15s}
+  .chip:hover{color:var(--txt);border-color:#3d517a}
+  .chip.active{background:rgba(90,169,230,.18);border-color:var(--blue);color:#cfe6ff}
+  .hint{color:var(--muted);font-size:12.5px}
+  /* table */
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+  table{border-collapse:collapse;width:100%;min-width:820px;font-size:14px}
+  thead th{position:sticky;top:0;background:var(--panel2);color:var(--sub);text-align:left;
+    padding:13px 12px;font-weight:700;font-size:12.5px;letter-spacing:.5px;white-space:nowrap;
+    border-bottom:1px solid var(--line);cursor:pointer;user-select:none}
+  thead th .arr{opacity:.35;font-size:10px;margin-left:4px}
+  thead th.sorted .arr{opacity:1;color:var(--gold)}
+  tbody td{padding:11px 12px;border-bottom:1px solid rgba(42,58,85,.55);vertical-align:middle}
+  tbody tr:hover{background:rgba(90,169,230,.06)}
+  tbody tr:last-child td{border-bottom:none}
+  .u-cell{display:flex;align-items:center;gap:11px;min-width:150px}
+  .u-cell img{width:44px;height:44px;object-fit:contain;image-rendering:pixelated;
+    background:radial-gradient(circle at 50% 60%,#2b3d5c,#141d2e);border-radius:10px;border:1px solid var(--line);padding:2px}
+  .u-name{font-weight:700;font-size:14.5px}
+  .role{display:inline-block;margin-top:2px;font-size:11px;padding:1px 8px;border-radius:999px;font-weight:600}
+  .role.c{background:rgba(231,180,90,.16);color:#f0c878}
+  .role.r{background:rgba(90,169,230,.16);color:#9fcdf3}
+  .role.s{background:rgba(178,138,230,.16);color:#cbb0f2}
+  .stat{font-variant-numeric:tabular-nums;font-weight:700}
+  .s-atk{color:var(--atk)} .s-def{color:var(--def)} .s-mov{color:var(--mov)}
+  .s-range{color:var(--range)} .s-hp{color:var(--muted)} .s-cost{color:#f0d69a}
+  .abil{display:flex;flex-wrap:wrap;gap:5px}
+  .tag{font-size:11.5px;padding:2px 8px;border-radius:6px;background:rgba(87,201,194,.13);color:#8fe0da;border:1px solid rgba(87,201,194,.22)}
+  .tag.warn{background:rgba(229,107,107,.13);color:#f0a3a3;border-color:rgba(229,107,107,.22)}
+  .tag.gold{background:rgba(231,180,90,.13);color:#f0c878;border-color:rgba(231,180,90,.22)}
+  /* icon crop (sprite sheets: show first frame only) */
+  .icon{background-repeat:no-repeat;background-size:100% auto;background-position:top center;
+    image-rendering:pixelated;border-radius:10px;border:1px solid var(--line);flex:0 0 auto;background-color:#141d2e}
+  .icon.sm{width:46px;height:46px}
+  .icon.lg{width:56px;height:56px}
+  .use{font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:999px;white-space:nowrap;border:1px solid transparent}
+  .use.ok{background:rgba(94,201,138,.16);color:#8fe0b0;border-color:rgba(94,201,138,.3)}
+  .use.mid{background:rgba(231,180,90,.16);color:#f0c878;border-color:rgba(231,180,90,.3)}
+  .use.no{background:rgba(229,107,107,.15);color:#f0a3a3;border-color:rgba(229,107,107,.3)}
+  .legend{display:flex;gap:18px;flex-wrap:wrap;margin:0 0 14px;font-size:12.5px;color:var(--sub);line-height:1.9}
+  .legend>span{display:inline-flex;align-items:center;gap:6px}
+  /* cards */
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:16px}
+  .card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);
+    border-radius:16px;padding:16px;transition:.18s;position:relative;overflow:hidden}
+  .card:hover{border-color:#3d517a;transform:translateY(-3px);box-shadow:0 10px 26px rgba(0,0,0,.35)}
+  .card .top{display:flex;align-items:center;gap:13px;margin-bottom:10px}
+  .card .top img{width:66px;height:66px;object-fit:contain;image-rendering:pixelated;border-radius:12px;
+    background:radial-gradient(circle at 50% 60%,#2b3d5c,#141d2e);border:1px solid var(--line);padding:3px}
+  .card h4{margin:0;font-size:16px}
+  .card .kv{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0 10px}
+  .kv span{font-size:12px;padding:3px 9px;border-radius:8px;background:rgba(255,255,255,.04);border:1px solid var(--line)}
+  .kv b{font-weight:700}
+  .card .desc{color:var(--sub);font-size:12.8px;margin:0}
+  .cards.tight .card{padding:14px}
+  .cards.tight .top img{width:48px;height:48px}
+  /* upgrade */
+  .formula{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--gold);
+    border-radius:12px;padding:16px 18px;color:var(--sub);font-size:13.5px;margin-bottom:22px}
+  .formula code{color:#f0d69a;font-family:Consolas,monospace;font-size:13px}
+  .lvl-table{min-width:520px}
+  /* notes */
+  .notes{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px}
+  .note{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:15px 16px}
+  .note .n-h{display:flex;align-items:center;gap:9px;font-weight:700;margin-bottom:6px;font-size:14.5px}
+  .note .ico{width:26px;height:26px;flex:0 0 26px;display:grid;place-items:center;border-radius:8px;
+    background:rgba(231,180,90,.14);color:var(--gold);font-size:14px}
+  .note p{margin:0;color:var(--sub);font-size:13px}
+  .foot{color:var(--muted);font-size:12px;text-align:center;padding:34px 0 46px;border-top:1px solid var(--line);margin-top:40px}
+  .foot code{color:#9db0cc}
+  @media(max-width:640px){.hero h1{font-size:26px}.wrap{padding:0 14px}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>远古帝国 2 · 数据攻略</h1>
+    <p>Ancient Empire: Strike Back —— 单位属性 · 建筑地形 · 升级机制 速查</p>
+    <div class="badges">
+      <span>⚔ 15 种单位</span><span>🏰 4 种建筑</span><span>🗺 7 类地形</span><span>📈 0–9 级成长</span>
+      <span>📖 数据取自游戏源码</span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="wrap inner">
+    <button class="tab active" data-target="p-units">单位图鉴</button>
+    <button class="tab" data-target="p-build">建筑与地形</button>
+    <button class="tab" data-target="p-upgrade">升级系统</button>
+    <button class="tab" data-target="p-notes">进阶要点</button>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <!-- ============ 单位 ============ -->
+  <section id="p-units" class="panel active">
+    <h2 class="section-title">单位图鉴 · <span class="em">属性对比</span></h2>
+    <p class="section-desc">生命值统一为 100；点击表头可按该列排序，用标签筛选单位类型。攻击为单次攻击力区间（min–max）；<b>射程为可攻击到的格数（1 = 贴身近战，弓箭手 2、投石车 4）</b>。注：源码里的范围字段（atkRange/raiseRange/auraRange）都要 −1 才是实际生效格数。</p>
+    <div class="legend">
+      <span><span class="use ok">可购买</span> 我方在城堡商店购买（各关解锁兵种不同）</span>
+      <span><span class="use ok">我方英雄</span> 战役主角，可操控 / 升级 / 城堡复活</span>
+      <span><span class="use mid">召唤物</span> 女巫召唤，可临时使用、不可购买</span>
+      <span><span class="use no">敌方 / 不可用</span> 敌方指挥官或剧情物件</span>
+    </div>
+
+    <div class="toolbar">
+      <div class="chips" id="roleChips">
+        <button class="chip active" data-role="all">全部</button>
+        <button class="chip" data-role="c">指挥官</button>
+        <button class="chip" data-role="r">可招募兵种</button>
+        <button class="chip" data-role="s">召唤 / 特殊</button>
+      </div>
+      <div class="hint">↕ 点击表头排序</div>
+    </div>
+
+    <div class="tablewrap">
+      <table id="unitTable">
+        <thead>
+          <tr>
+            <th data-key="name">单位<span class="arr">▲</span></th>
+            <th data-key="atkMax">攻击<span class="arr">▲</span></th>
+            <th data-key="range">射程(格)<span class="arr">▲</span></th>
+            <th data-key="def">防御<span class="arr">▲</span></th>
+            <th data-key="mov">移动<span class="arr">▲</span></th>
+            <th data-key="cost">造价<span class="arr">▲</span></th>
+            <th data-key="hp">生命<span class="arr">▲</span></th>
+            <th data-key="useRank">可用性<span class="arr">▲</span></th>
+            <th>特技 / 加成</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <h3 class="subhead">全局与单位特技</h3>
+    <div class="cards tight" id="abilityCards"></div>
+  </section>
+
+  <!-- ============ 建筑与地形 ============ -->
+  <section id="p-build" class="panel">
+    <h2 class="section-title">建筑与地形 · <span class="em">增益一览</span></h2>
+    <p class="section-desc">站在建筑或地形格上会获得“护甲”（减伤），建筑还提供回血与金币。护甲取建筑与地形中较高的那一项（建筑优先）。</p>
+
+    <h3 class="subhead">建筑（驻守增益 / 收益）</h3>
+    <div class="cards" id="buildingCards"></div>
+
+    <h3 class="subhead">地形（防御加成 / 移动消耗）</h3>
+    <div class="cards" id="terrainCards"></div>
+  </section>
+
+  <!-- ============ 升级 ============ -->
+  <section id="p-upgrade" class="panel">
+    <h2 class="section-title">升级系统 · <span class="em">成长曲线</span></h2>
+    <p class="section-desc">单位通过战斗获得经验（XP）自动升级；<b>初始为 0 级</b>（0 XP，无加成）。每提升 1 级，<b>攻击 +2、防御 +2</b>（源码 atkByLevel / defByLevel = 2）。</p>
+
+    <div class="formula">
+      <div style="margin-bottom:8px;color:#cfe0f5;font-weight:700">⛨ 伤害结算（简化）</div>
+      实际伤害 ≈ <code>(攻方攻击力 + 等级×2 + 各种增益 − 减益) × 攻方血量比例</code><br>
+      − <code>(守方防御 + 等级×2 + 地形/建筑护甲 + 各种增益) × 攻方血量比例</code><br>
+      伤害最低为 1，且不超过守方剩余生命。<span style="color:#8fa6c6">“血量比例 = 当前生命 / 100”，因此残血单位输出会下降。</span>
+    </div>
+
+    <div class="tablewrap" style="max-width:640px">
+      <table class="lvl-table">
+        <thead>
+          <tr><th>等级（从 0 起）</th><th>所需经验 XP</th><th>累计攻击加成</th><th>累计防御加成</th></tr>
+        </thead>
+        <tbody id="levelBody"></tbody>
+      </table>
+    </div>
+    <p class="section-desc" style="margin-top:14px">取“不超过当前 XP 的最高档”：<b>0 级 = 0 XP（无加成）</b>，攒到 84 XP 才升 1 级（+2/+2）；<b>9 级 = 926 XP（攻防各 +18，满级）</b>。</p>
+  </section>
+
+  <!-- ============ 进阶 ============ -->
+  <section id="p-notes" class="panel">
+    <h2 class="section-title">进阶攻略 · <span class="em">注意事项</span></h2>
+    <p class="section-desc">对局中真正影响胜负的机制与细节，按重要性排列。</p>
+    <div class="notes" id="noteCards"></div>
+  </section>
+
+  <div class="foot">
+    数据来自游戏源码：<code>master-unit.js</code> · <code>building.js</code> · <code>map.js</code> · <code>base-unit.js</code>。
+    仅供学习交流，游戏版权归原作者所有。
+  </div>
+</main>
+
+<script>
+/* ---------------- 数据 ---------------- */
+const UNITS = [
+  {id:'galamar', name:'格拉玛', role:'c', atkMin:55, atkMax:65, range:1, def:20, mov:5, cost:200, hp:100,
+   abil:['可修建筑','占农田/城堡','城堡复活'], desc:'指挥官，攻防兼备；可占领城堡生产部队，阵亡后可在城堡中复活。'},
+  {id:'valadorn', name:'渥拉顿', role:'c', atkMin:55, atkMax:65, range:1, def:20, mov:5, cost:200, hp:100,
+   abil:['可修建筑','占农田/城堡','城堡复活'], desc:'指挥官，属性与格拉玛一致，可占领城堡生产部队并在城堡复活。'},
+  {id:'demon-lord', name:'恶魔领主', role:'c', atkMin:55, atkMax:65, range:1, def:20, mov:5, cost:200, hp:100,
+   abil:['可修建筑','占农田/城堡','城堡复活'], desc:'指挥官，属性与格拉玛一致，可占领城堡生产部队并在城堡复活。'},
+  {id:'saeth', name:'西斯', role:'c', atkMin:55, atkMax:65, range:1, def:20, mov:5, cost:200, hp:100,
+   abil:['可修建筑','占农田/城堡','城堡复活'], desc:'指挥官，属性与格拉玛一致；另有剧情形态“天怒”（见下）。'},
+  {id:'soldier', name:'士兵', role:'r', atkMin:50, atkMax:55, range:1, def:5, mov:5, cost:150, hp:100,
+   abil:['可修建筑','唯一能占城镇赚金币'], desc:'全能型战士，是军队中坚。也是能占领城镇/农田赚金币的兵种，经济核心。'},
+  {id:'archer', name:'弓箭手', role:'r', atkMin:50, atkMax:55, range:2, def:5, mov:5, cost:250, hp:100,
+   abil:['对飞行 +30 攻'], desc:'远程射手，射程 2，尤其擅长对付空中的飞行单位（对飞行 +30 攻击）。'},
+  {id:'elemental', name:'水元素', role:'r', atkMin:50, atkMax:55, range:1, def:10, mov:5, cost:300, hp:100,
+   abil:['水陆两栖','水中 +10攻/+15防'], desc:'水之灵。水系单位在水域每格只消耗 1 点移动力（普通单位每格 3 点），且在水中攻击 +10、防御 +15，是水战之王。'},
+  {id:'sorceress', name:'女巫', role:'r', atkMin:40, atkMax:45, range:1, def:5, mov:5, cost:400, hp:100,
+   abil:['召唤骷髅（相邻1格）'], desc:'精通魔法但近战薄弱。能从阵亡单位的坟墓召唤骷髅战士，关键时刻改变战局。'},
+  {id:'wisp', name:'小精灵', role:'r', atkMin:35, atkMax:40, range:1, def:10, mov:5, cost:500, hp:100,
+   abil:['光环 +10攻（半径2·13格）','对骷髅 +30 攻'], desc:'散发光环，增强周围友军攻击；近战对骷髅格外致命（对骷髅 +30）。'},
+  {id:'dire-wolf', name:'恶狼', role:'r', atkMin:60, atkMax:65, range:1, def:15, mov:6, cost:600, hp:100,
+   abil:['撕咬中毒'], desc:'凶猛的猎手，移动力 6。撕咬带毒：使目标攻击 -10、防御 -10、移动 -1。'},
+  {id:'golem', name:'石像', role:'r', atkMin:60, atkMax:70, range:1, def:30, mov:5, cost:600, hp:100,
+   abil:['超高防御'], desc:'远古生物，行动迟缓但防御极高（30）。据守建筑或高地时极难被击破。'},
+  {id:'catapult', name:'投石车', role:'r', atkMin:50, atkMax:70, range:4, def:10, mov:4, cost:700, hp:100,
+   abil:['射程4','移动后不能攻击','可摧毁建筑'], desc:'超远射程、破坏力强，可摧毁敌方城镇断其金币；但移动当回合不能攻击，近身极脆，需护卫。'},
+  {id:'dragon', name:'龙', role:'r', atkMin:70, atkMax:80, range:1, def:25, mov:7, cost:1000, hp:100,
+   abil:['飞行（无视地形）'], desc:'庞大飞行巨兽，移动力 7、攻击 70–80，飞行移动无视地形消耗，是最强常规兵种。'},
+  {id:'skeleton', name:'骷髅', role:'s', atkMin:40, atkMax:50, range:1, def:2, mov:5, cost:null, hp:100,
+   abil:['召唤物（不可购买）'], desc:'女巫召唤出的无生命战士，与士兵同样强大，但防御较低（2），无法在商店购买。'},
+  {id:'saeth-heavens-fury', name:'西斯·天怒', role:'s', atkMin:55, atkMax:65, range:15, def:45, mov:1, cost:null, hp:100,
+   abil:['射程15','防御45','剧情形态'], desc:'剧情特殊形态：射程高达 15、防御 45，但移动仅 1，且无法购买。'},
+  {id:'crystal', name:'水晶', role:'s', atkMin:0, atkMax:0, range:0, def:15, mov:4, cost:null, hp:100,
+   abil:['地图物件（不可购买）'], desc:'传说中的远古水晶，不能攻击，作为地图目标/守护物存在。'},
+];
+
+const USE = {
+  'galamar':{t:'我方英雄',cls:'ok'}, 'valadorn':{t:'我方英雄',cls:'ok'},
+  'demon-lord':{t:'敌方指挥官',cls:'no'}, 'saeth':{t:'敌方指挥官',cls:'no'},
+  'soldier':{t:'可购买',cls:'ok'}, 'archer':{t:'可购买',cls:'ok'},
+  'elemental':{t:'可购买',cls:'ok'}, 'sorceress':{t:'可购买',cls:'ok'},
+  'wisp':{t:'可购买',cls:'ok'}, 'dire-wolf':{t:'可购买',cls:'ok'},
+  'golem':{t:'可购买',cls:'ok'}, 'catapult':{t:'可购买',cls:'ok'},
+  'dragon':{t:'可购买',cls:'ok'},
+  'skeleton':{t:'召唤物',cls:'mid'},
+  'saeth-heavens-fury':{t:'不可用',cls:'no'}, 'crystal':{t:'不可用',cls:'no'},
+};
+
+const ABILITIES = [
+  {t:'等级成长', d:'每 +1 级，攻击 +2、防御 +2；满级累计 +18 / +18。', tag:'gold'},
+  {t:'小精灵光环', d:'光环覆盖曼哈顿距离 ≤2 的 13 格（含自身），范围内友军攻击 +10（多个小精灵不叠加）。', tag:''},
+  {t:'中毒（恶狼）', d:'使目标攻击 -10、防御 -10、移动 -1，持续约 2 回合。', tag:'warn'},
+  {t:'水元素 · 水域', d:'站在水域时攻击 +10、防御 +15；作为水系单位，在水中每格只消耗 1 点移动力（普通单位每格 3 点）。', tag:''},
+  {t:'弓箭手 · 对空', d:'攻击飞行单位（龙）时攻击 +30。', tag:''},
+  {t:'小精灵 · 对骷髅', d:'攻击骷髅时攻击 +30。', tag:''},
+  {t:'残血惩罚', d:'攻击力按 当前生命/100 缩放，残血单位输出显著下降。', tag:'warn'},
+  {t:'护甲叠加', d:'守方防御 + 等级×2 + 地形/建筑护甲 共同构成减伤。', tag:''},
+];
+
+const BUILDINGS = [
+  {id:'castle', name:'城堡', img:'images/building/castle.png',
+   kv:[['收益','+50 金 / 回合'],['回血','+20 / 回合'],['护甲','+15']],
+   desc:'可驻军并生产部队；指挥官阵亡后可在此复活。经济与补员的核心建筑，务必守住。'},
+  {id:'farm', name:'农田', img:'images/building/farm.png',
+   kv:[['收益','+30 金 / 回合'],['回血','+20 / 回合'],['护甲','+15']],
+   desc:'占领后每回合产出金币。可被摧毁——损坏后需士兵/指挥官修复才能继续占领。'},
+  {id:'well', name:'水井', img:'images/building/well.png',
+   kv:[['收益','无'],['回血','+20 / 回合'],['护甲','+15']],
+   desc:'中立建筑，不产金；驻守可每回合回血，适合作为前线的回血据点。'},
+  {id:'temple', name:'神殿', img:'images/building/temple.png',
+   kv:[['收益','无'],['回血','+20 / 回合'],['护甲','+15']],
+   desc:'中立建筑，不产金；驻守可每回合回血，兼具防御加成。'},
+];
+
+const TERRAINS = [
+  {id:'terra-1', name:'草地', img:'images/terrain/terra-4.png', kv:[['护甲','+5'],['移动消耗','1']], desc:'最常见的平地，轻度防御加成。'},
+  {id:'road-1', name:'道路', img:'images/terrain/road-1.png', kv:[['护甲','+0'],['移动消耗','1']], desc:'快速通道，无防御加成，适合快速机动。'},
+  {id:'bridge-1', name:'桥', img:'images/terrain/bridge-1.png', kv:[['护甲','+0'],['移动消耗','1']], desc:'跨越水面的通道，无防御加成。'},
+  {id:'hill-1', name:'丘陵', img:'images/terrain/hill-1.png', kv:[['护甲','+10'],['移动消耗','2']], desc:'高地，防御 +10，是理想的防守位。'},
+  {id:'forest-1', name:'森林', img:'images/terrain/forest-1.png', kv:[['护甲','+10'],['移动消耗','2']], desc:'掩护地形，防御 +10，适合设伏与固守。'},
+  {id:'stone-1', name:'石地', img:'images/terrain/stone-1.png', kv:[['护甲','+15'],['移动消耗','3']], desc:'防御最高的地形 +15，但移动消耗大。'},
+  {id:'water-1', name:'水域', img:'images/terrain/water-1.png', kv:[['护甲','+0'],['移动消耗','3（水元素 1）']], desc:'所有单位均可通行但消耗 3；水元素消耗 1 且在水中 +10攻/+15防；龙飞行无视。'},
+];
+
+const LEVELS = [
+  [0,0,0,0],[1,84,2,2],[2,172,4,4],[3,265,6,6],[4,362,8,8],
+  [5,464,10,10],[6,571,12,12],[7,684,14,14],[8,802,16,16],[9,926,18,18],
+];
+
+const NOTES = [
+  ['💰','经济优先','只有士兵与指挥官能占领城镇（农田/城堡）赚金币。尽早派兵占点，金币是一切出兵的基础。'],
+  ['🏰','守好城堡','城堡可生产部队、指挥官阵亡后能在此复活。攻方应优先摧毁/占领敌方城堡断其经济与补员。'],
+  ['❤','建筑回血','残血单位站到城堡/农田/水井/神殿上，每回合最多回 20 血；以建筑为据点打拉锯战。'],
+  ['⛰','卡地形','石地 +15、丘陵/森林 +10、草地 +5 防御。前排站高地/森林/石地，远程躲后排输出。'],
+  ['👣','算移动力','石地/水域每格耗 3、丘陵/森林耗 2、平地/路/桥耗 1（水系单位在水域每格只耗 1）。绕路与地形直接决定机动与包抄。'],
+  ['🌊','善用不水域','水并非不可通行，普通单位每格耗 3；水元素在水中耗 1 且 +10攻/+15防，龙飞行无视地形。'],
+  ['🎯','利用克制','弓箭手对飞行（龙）+30；小精灵对骷髅 +30，且光环给半径 2（13 格）内友军 +10 攻——把小精灵贴在主力输出旁。'],
+  ['☠','先手放毒','恶狼撕咬使目标 -10攻/-10防/-1移动。先手毒住敌方主力（指挥官、龙）收益极大。'],
+  ['🪨','护卫投石车','投石车射程 4、能拆建筑断经济，但“移动后不能攻击”且近身极脆，需士兵/石像贴身保护。'],
+  ['🧙','女巫召唤','女巫在相邻 1 格（上下左右紧挨自己）内、从阵亡单位墓碑召唤骷髅，当肉盾或占点位（骷髅不可购买），用召唤物消耗敌方攻击。'],
+  ['📈','养精蓄锐','多打胜仗攒 XP，攻防每级 +2（满级 +18/+18）。护送高价值单位升级，避免无谓送头。'],
+  ['🩸','残血即弱','攻击力按当前血量比例缩放，残血单位输出骤降——及时回血或换防，别让残兵硬拼。'],
+  ['🎚','难度说明','难度只改变电脑 AI 的评分与“是否保兵撤退”，不改单位/经济数值；困难 AI 更会保存实力，简单更莽。'],
+  ['💾','存档备份','进度存浏览器 IndexedDB，换端口或清站点数据会丢失；请用「关于 → 导出存档」定期备份。'],
+];
+
+/* ---------------- 渲染 ---------------- */
+const ROLE_TXT = {c:'指挥官', r:'可招募', s:'特殊'};
+const ROLE_CLS = {c:'c', r:'r', s:'s'};
+const imgOf = u => 'images/units/unit-' + (u.id==='saeth-heavens-fury'?'saeth':u.id) + '-red.png';
+
+function statCell(v, cls){ return `<td class="stat ${cls}">${v}</td>`; }
+
+let curRole = 'all', sortKey = null, sortDir = 1;
+function renderUnits(){
+  const rows = UNITS.filter(u => curRole==='all' || u.role===curRole);
+  if(sortKey){
+    rows.sort((a,b)=>{
+      let va = a[sortKey], vb = b[sortKey];
+      if(sortKey==='name') return String(va).localeCompare(String(vb),'zh')*sortDir;
+      if(va==null) va = -1; if(vb==null) vb = -1;
+      return (va-vb)*sortDir;
+    });
+  }
+  document.querySelector('#unitTable tbody').innerHTML = rows.map(u=>`
+    <tr>
+      <td>
+        <div class="u-cell">
+          <div class="icon sm" style="background-image:url('${imgOf(u)}')"></div>
+          <div><div class="u-name">${u.name}</div>
+            <span class="role ${ROLE_CLS[u.role]}">${ROLE_TXT[u.role]}</span></div>
+        </div>
+      </td>
+      ${statCell(u.atkMin+'–'+u.atkMax,'s-atk')}
+      ${statCell(u.range,'s-range')}
+      ${statCell(u.def,'s-def')}
+      ${statCell(u.mov,'s-mov')}
+      ${statCell(u.cost==null?'—':u.cost,'s-cost')}
+      ${statCell(u.hp,'s-hp')}
+      <td><span class="use ${(USE[u.id]||{}).cls||'ok'}">${(USE[u.id]||{}).t||'—'}</span></td>
+      <td><div class="abil">${u.abil.map(a=>{
+        const w = /毒|不能|不可|脆弱/.test(a)?'warn':(/光环|射程|剧情/.test(a)?'gold':'');
+        return `<span class="tag ${w}">${a}</span>`;}).join('')}</div></td>
+    </tr>`).join('');
+}
+document.querySelectorAll('#roleChips .chip').forEach(c=>{
+  c.addEventListener('click',()=>{
+    document.querySelectorAll('#roleChips .chip').forEach(x=>x.classList.remove('active'));
+    c.classList.add('active'); curRole = c.dataset.role; renderUnits();
+  });
+});
+document.querySelectorAll('#unitTable thead th[data-key]').forEach(th=>{
+  th.addEventListener('click',()=>{
+    const k = th.dataset.key;
+    if(sortKey===k){ sortDir*=-1; } else { sortKey=k; sortDir=1; }
+    document.querySelectorAll('#unitTable thead th').forEach(t=>t.classList.remove('sorted'));
+    th.classList.add('sorted');
+    th.querySelector('.arr').textContent = sortDir>0?'▲':'▼';
+    renderUnits();
+  });
+});
+
+function renderCards(el, arr){
+  el.innerHTML = arr.map(o=>`
+    <div class="card">
+      <div class="top">
+        <img src="${o.img}" alt="${o.name}">
+        <h4>${o.name}</h4>
+      </div>
+      <div class="kv">${o.kv.map(k=>`<span>${k[0]} <b>${k[1]}</b></span>`).join('')}</div>
+      <p class="desc">${o.desc}</p>
+    </div>`).join('');
+}
+
+function renderAbilities(){
+  document.getElementById('abilityCards').innerHTML = ABILITIES.map(a=>`
+    <div class="card">
+      <h4 style="margin-bottom:6px">${a.t}</h4>
+      <p class="desc">${a.d}</p>
+    </div>`).join('');
+}
+
+function renderLevels(){
+  document.getElementById('levelBody').innerHTML = LEVELS.map(r=>`
+    <tr><td class="stat">Lv.${r[0]}</td><td>${r[1]} XP</td>
+        <td class="stat s-atk">+${r[2]}</td><td class="stat s-def">+${r[3]}</td></tr>`).join('');
+}
+
+function renderNotes(){
+  document.getElementById('noteCards').innerHTML = NOTES.map(n=>`
+    <div class="note">
+      <div class="n-h"><span class="ico">${n[0]}</span>${n[1]}</div>
+      <p>${n[2]}</p>
+    </div>`).join('');
+}
+
+/* tabs */
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById(t.dataset.target).classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+
+renderUnits(); renderAbilities(); renderLevels();
+renderCards(document.getElementById('buildingCards'), BUILDINGS);
+renderCards(document.getElementById('terrainCards'), TERRAINS);
+renderNotes();
+</script>
+</body>
+</html>
