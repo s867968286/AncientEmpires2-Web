@@ -42,7 +42,7 @@
 				};
 
 			function download() {
-				dbMaster.getSavedGames().then(function (savedGames) {
+				dbMaster.getRows(dbMaster.savedGame).then(function (savedGames) {
 					backup.savedGames = savedGames || [];
 					var json = JSON.stringify(backup),
 						blob = new Blob([json], {type: 'application/json'}),
@@ -107,11 +107,23 @@
 
 				var chain = $.Deferred().resolve().promise();
 
+				var skippedSaves = 0;
+
 				_.each(data.savedGames || [], function (game) {
 					chain = chain.then(function () {
+						// 旧版导出只存了存档名（字符串），无法写回；跳过避免 DataError
+						if (!game || typeof game !== 'object' || game.name === undefined || game.name === null) {
+							skippedSaves += 1;
+							return;
+						}
 						var dfd = $.Deferred(),
 							tx = dbMaster.db.transaction([dbMaster.savedGame], 'readwrite');
-						tx.objectStore(dbMaster.savedGame).put(game);
+						try {
+							tx.objectStore(dbMaster.savedGame).put(game);
+						} catch (err) {
+							skippedSaves += 1;
+							return;
+						}
 						tx.oncomplete = function () { dfd.resolve(); };
 						tx.onerror = function () { dfd.resolve(); };
 						return dfd.promise();
@@ -136,7 +148,7 @@
 
 				chain.then(function () {
 					input.value = '';
-					alert('导入完成，页面将刷新以应用存档。');
+					alert('导入完成，页面将刷新以应用存档。' + (skippedSaves ? ('\n注意：有 ' + skippedSaves + ' 个存档来自旧版备份、只含名字无法恢复，已跳过（进度不受影响）。') : ''));
 					win.location.reload();
 				});
 			};
