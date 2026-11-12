@@ -13,8 +13,6 @@
         "type": "skirmish",
         "size": {"width": 10, "height": 10},
         "name": "Protection of the castle",
-        "name-es": "Protección del castillo",
-        "name-ru": "Защита замков",
         "isOpen": true,
         "maxPlayers": 2,
         "units": [{"x": 9, "y": 9, "type": "commander", "ownerId": 1}, {

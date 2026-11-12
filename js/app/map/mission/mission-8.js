@@ -6,20 +6,10 @@
 	/*global */
 
 	var langEn = win.APP.languages.en,
-		langRu = win.APP.languages.ru || win.APP.languages.en,
-		langEs = win.APP.languages.es || win.APP.languages.en,
 		langZh = win.APP.languages.zh,
 		langEnExtra = {
 			name: 'HEAVEN\'S FURY',
 			objective: 'Defeat Saeth and his minions! Galamar and Valadorn must survive.'
-		},
-		langRuExtra = {
-			name: 'ЯРОСТЬ НЕБЕС',
-			objective: 'Порвать Саефа и его приспешников! Король Галамар и Король Валадорн должны выжить.'
-		},
-		langEsExtra = {
-			name: 'LA FURIA DE LOS CIELOS',
-			objective: '¡Derrota a Saeth y a sus adeptos! Galamar y Valador deben sobrevivir.'
 		},
 		langZhExtra = {
 			name: '天堂之怒',
@@ -276,468 +266,8 @@
 		],
 
 		// es
-		'name-es': langEsExtra.name,
-		'objective-es': langEsExtra.objective,
-		'startBriefing-es': [
-			{
-				popupName: 'story',
-				cssClass: 'full-screen',
-				popupData: {
-					content: langEs.story.list[4]
-				},
-				playSound: {
-					sound: 'bg-story.mp3',
-					road: 0,
-					isLoop: true
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: 'La Antigua Citadela'
-				},
-				playSound: {
-					sound: 'bg-good.mp3',
-					road: 0,
-					isLoop: true
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¡Las Ruinas de la Antigua Citadela... y Saeth! ¡Con los Cristales!',
-					img: 'i/face/galamar.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 8, y: 15 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¡Al fin, Galamar y Valador! ¡Vaya si son valientes para atreverse a enfrentarme! Todas las llaves están colocadas, y pronto el mas grande poder que se jámas se haya creado en la tierra rugirá y se doblara a mi voluntad. ¡Tu destrucción será el testimonio de su poder y gloria!',
-					img: 'i/face/saeth.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 7, y: 2 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¡Tus artimañas no podrán engañarnos mas, Saeth!',
-					img: 'i/face/valadorn.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 6, y: 15 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right ta-center',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'BLANCO ADQUIRIDO...<br>FURIA DE LOS CIELOS ACTIVADA!',
-					img: ''
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¿Furia de los cielos? ¡¿Qué demonios es eso?!',
-					img: 'i/face/galamar.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 8, y: 15 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Patéticas criaturas, ¡Ésto es algo tan antiguo que no lo comprenderían ni aunque vivieran mil años! ¡Testifiquen el poder de la Furia de los Cielos!',
-					img: 'i/face/saeth.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 7, y: 2 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¡Galamar! ¡Tenemos que apresurarnos si queremos que nuestras tropas tengan una oportunidad!',
-					img: 'i/face/valadorn.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 6, y: 15 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Señor, deberiamos atacar esos castillos primero antes de lanzar un ataque a las Ruinas donde está Saeth',
-					img: 'i/face/soldier.png'
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langEsExtra.name,
-					text: langEsExtra.objective
-				}
-			}
-		],
-		'endBriefing-es': [
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				playSound: {
-					sound: 'game-complete.mp3',
-					road: 0,
-					isLoop: true
-				},
-				popupData: {
-					text: 'Lamentables y miserables. Ustedes no vivirán lo suficiente para ver su precioso reino envuelto en oscuridad...',
-					img: 'i/face/saeth.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¡Saeth! ¡Esta vez tu derrota en definitiva!',
-					img: 'i/face/galamar.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'En sus insignificantes vidas y estrechas mentes, quizás... Sin embargo todo esta ahora puesto en marcha - Las invisibles fuerzas que goviernan el tiempo están más allá de su compresión. ¡No pueden evitar que me levante de nuevo!',
-					img: 'i/face/saeth.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¡Su Majestad, las Ruinas se están cayendo a pedazos! ¡Debemos irnos inmediatamente!',
-					img: 'i/face/soldier.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¡Pero los Cristales... todavía siguen dentro!',
-					img: 'i/face/tamplier.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¡Lo único que podemos salvar ahora es a nosotros mismos!',
-					img: 'i/face/valadorn.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Me han servido bien, ¡Ahora vamos!',
-					img: 'i/face/galamar.png'
-				}
-			},
-			{
-				popupName: 'story',
-				cssClass: 'full-screen',
-				popupData: {
-					content: langEs.story.list[5]
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langEs.missionComplete
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langEs.congratulations,
-					text: 'Gracias por jugar AE2 - ¡Espero que hayas disfrutado jugando, tanto como yo disfrute haciendolo!'
-				},
-				onHide: {
-					fn: 'backTo',
-					args: ['', { isForce: true }]
-				}
-			}
-		],
 
 		// ru
-		'name-ru': langRuExtra.name,
-		'objective-ru': langRuExtra.objective,
-		'startBriefing-ru': [
-			{
-				popupName: 'story',
-				cssClass: 'full-screen',
-				popupData: {
-					content: langRu.story.list[4]
-				},
-				playSound: {
-					sound: 'bg-story.mp3',
-					road: 0,
-					isLoop: true
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: 'Античная цитадель'
-				},
-				playSound: {
-					sound: 'bg-good.mp3',
-					road: 0,
-					isLoop: true
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Руины Античной Цитадели... и Саеф! С Кристаллами!',
-					img: 'i/face/galamar.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 8, y: 15 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Наконец-то, Галамар и Валадорн! Как вы храбры, чтобы противостоять мне! Все ключи на местах, и скоро величайшая сила из свех, когда либо созранных на земле подчинится моей воле. Ваше уничтожение будет доказательством этой силы!',
-					img: 'i/face/saeth.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 7, y: 2 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Твои уловки больше не будут вводить нас в заблуждение, Саеф!',
-					img: 'i/face/valadorn.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 6, y: 15 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right ta-center',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'ЦЕЛЬ ДОСТИГНУТА...<br>НЕБЕСНАЯ ЯРОСТЬ АКТИВИРОВАНА!',
-					img: ''
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Небесная ярость? Что, именем Создателя, это такое!',
-					img: 'i/face/galamar.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 8, y: 15 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Жалкие создания, это что-то настолько древнее, чего вы не сможете понять, даже если проживете тысячи лет! Будьте свидетелями силы Небесной ярости!',
-					img: 'i/face/saeth.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 7, y: 2 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Галамар! Вы должны поторопиться, чтобы наши войска получили шанс.',
-					img: 'i/face/valadorn.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 6, y: 15 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Сэр, мы должны атаковать эти замки перед тем, как мы начнем нападение на Саефа и Руины.',
-					img: 'i/face/soldier.png'
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langRuExtra.name,
-					text: langRuExtra.objective
-				}
-			}
-		],
-		'endBriefing-ru': [
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				playSound: {
-					sound: 'game-complete.mp3',
-					road: 0,
-					isLoop: true
-				},
-				popupData: {
-					text: 'Жалкие негодяи! Вы не проживете столько, чтобы увидеть, как ваше драгоценное Королевство поглотиться тьмой...',
-					img: 'i/face/saeth.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Саеф! Пришло время твоего поражения!',
-					img: 'i/face/galamar.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'В твоей незначительной жизни и ограниченных мозгах, возможно...Тем не менее все сейчас в движении - невидимые силы, которые управляют временем за пределами твоих знаний. Ты не сможешь остановить меня от воскрешения!',
-					img: 'i/face/saeth.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Ваше Величество, Руины разваливаются! Мы должны уйти немедленно!',
-					img: 'i/face/soldier.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Но Кристаллы... Они все еще там!',
-					img: 'i/face/tamplier.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Все что мы можем сейчас спасти - это наши жизни!',
-					img: 'i/face/valadorn.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Вы хорошо служили мне. А сейчас уходите!',
-					img: 'i/face/galamar.png'
-				}
-			},
-			{
-				popupName: 'story',
-				cssClass: 'full-screen',
-				popupData: {
-					content: langRu.story.list[5]
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langRu.missionComplete
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langRu.congratulations,
-					text: 'И благодарим вас за игру в \'Ancient Empire: Strike Back\' - я очень надеюсь, что вы насладились игрой также как я наслаждался, создавая ее!'
-				},
-				onHide: {
-					fn: 'backTo',
-					args: ['', { isForce: true }]
-				}
-			}
-		],
 
 		// zh
 		'name-zh': langZhExtra.name,
@@ -758,7 +288,7 @@
 			{
 				popupName: 'simple-notification',
 				popupData: {
-					header: '泰型材城堡'
+					header: '远古要塞'
 				},
 				playSound: {
 					sound: 'bg-good.mp3',
@@ -771,7 +301,7 @@
 				from: 'left',
 				cssClass: 'briefing',
 				popupData: {
-					text: '古代遗迹..水晶..还有西斯！',
+					text: '远古要塞的遗迹……还有西斯！带着水晶！',
 					img: 'i/face/galamar.png'
 				},
 				onShow: {
@@ -785,7 +315,7 @@
 				from: 'right',
 				cssClass: 'briefing',
 				popupData: {
-					text: '结束了，格拉玛与渥拉顿。你们真是太可笑了，居然想要对抗我！水晶的力量已经聚齐，现在我掌握了最强大的力量！我的意愿就是神的意志！来看看我是如何摧毁你们的吧！',
+					text: '终于见面了，格拉玛与渥拉顿！你们竟敢来对抗我，真是勇敢！所有的钥匙都已就位，世上最强大的力量即将咆哮并臣服于我的意志。你们的毁灭将成为它力量与荣耀的证明！',
 					img: 'i/face/saeth.png'
 				},
 				onShow: {
@@ -822,7 +352,7 @@
 				from: 'left',
 				cssClass: 'briefing',
 				popupData: {
-					text: '天堂之怒？这就是水晶的力量吗..真是太可怕了。',
+					text: '天堂之怒？以造物主之名，那到底是什么！',
 					img: 'i/face/galamar.png'
 				},
 				onShow: {
@@ -836,7 +366,7 @@
 				from: 'right',
 				cssClass: 'briefing',
 				popupData: {
-					text: '这就是古代遗迹的力量，你们永远都不会明白! 感受天堂之怒吧!',
+					text: '可悲的造物，这是远古之物，就算你们活上一千年也无法理解！见证天堂之怒的力量吧！',
 					img: 'i/face/saeth.png'
 				},
 				onShow: {
@@ -850,7 +380,7 @@
 				from: 'left',
 				cssClass: 'briefing',
 				popupData: {
-					text: '格拉玛！我们必须尽快击败他!不然我们的军队就全毁了！',
+					text: '格拉玛！我们得赶快，否则我们的军队毫无胜算！',
 					img: 'i/face/valadorn.png'
 				},
 				onShow: {
@@ -864,7 +394,7 @@
 				from: 'right',
 				cssClass: 'briefing',
 				popupData: {
-					text: '没错，我们必须尽快击破水晶，在西斯和他的天堂之怒再次降临以前....',
+					text: '陛下，我们应当先攻下这些城堡，再去对付西斯和遗迹。',
 					img: 'i/face/soldier.png'
 				}
 			},
@@ -887,7 +417,7 @@
 					isLoop: true
 				},
 				popupData: {
-					text: '可笑的人类，你们将会消失在历史的尘埃里...',
+					text: '可悲的蝼蚁，你们活不到看见挚爱的王国被黑暗吞噬的那一天……',
 					img: 'i/face/saeth.png'
 				}
 			},
@@ -905,7 +435,7 @@
 				from: 'right',
 				cssClass: 'briefing',
 				popupData: {
-					text: '在你那有限的生命与无知的思想里..也许吧。但是我的生命是无穷的，谁也无法阻止我重生!',
+					text: '以你那渺小的生命和狭隘的心智，也许吧……但一切已经启动——那些主宰时间的无形之力远超你的认知。你阻止不了我重生！',
 					img: 'i/face/saeth.png'
 				}
 			},
@@ -914,7 +444,7 @@
 				from: 'left',
 				cssClass: 'briefing',
 				popupData: {
-					text: '上帝啊，遗迹正在坍塌，我们必须迅速撤离!',
+					text: '陛下，遗迹正在坍塌！我们必须立刻撤离！',
 					img: 'i/face/soldier.png'
 				}
 			},
@@ -923,7 +453,7 @@
 				from: 'right',
 				cssClass: 'briefing',
 				popupData: {
-					text: '但是水晶..他们还在这里!',
+					text: '可是水晶……它们还在里面！',
 					img: 'i/face/tamplier.png'
 				}
 			},
@@ -941,7 +471,7 @@
 				from: 'right',
 				cssClass: 'briefing',
 				popupData: {
-					text: '你已经服务我很久了，现在，走吧!',
+					text: '你干得不错。现在，走吧！',
 					img: 'i/face/galamar.png'
 				}
 			},
@@ -962,7 +492,7 @@
 				popupName: 'simple-notification',
 				popupData: {
 					header: langZh.congratulations,
-					text: '感谢游玩远古帝国：反击 - 我非常希望你能喜欢他!'
+					text: '感谢游玩远古帝国：反击 - 我非常希望你能喜欢它！'
 				},
 				onHide: {
 					fn: 'backTo',

@@ -12,8 +12,6 @@
 		"type": "skirmish",
 		"size": {"width": 15, "height": 15},
 		"name": "Scythe",
-		"name-es": "Guadaña",
-		"name-ru": "Коса",
 		"isOpen": true,
 		"maxPlayers": 2,
 		"units": [

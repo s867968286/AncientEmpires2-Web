@@ -13,8 +13,6 @@
         "type": "skirmish",
         "size": {"width": 15, "height": 9},
         "name": "Snake",
-        "name-es": "Serpiente",
-        "name-ru": "Змея",
         "isOpen": true,
         "maxPlayers": 2,
         "units": [{"x": 14, "y": 1, "type": "commander", "ownerId": 1}, {

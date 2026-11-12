@@ -12,8 +12,6 @@
 		"type": "skirmish",
 		"size": {"width": 16, "height": 16},
 		"name": "The forever war",
-		"name-es": "La guerra interminable",
-		"name-ru": "Вечная война",
 		"isOpen": true,
 		"maxPlayers": 4,
 		"units": [{"x": 1, "y": 1, "type": "commander", "ownerId": 0}, {"x": 14, "y": 14, "type": "commander", "ownerId": 1}, {"x": 1, "y": 14, "type": "commander", "ownerId": 2}, {"x": 14, "y": 1, "type": "commander", "ownerId": 3}],

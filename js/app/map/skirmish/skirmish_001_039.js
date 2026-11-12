@@ -12,8 +12,6 @@
         "type": "skirmish",
         "size": {"width": 15, "height": 15},
         "name": "Atomic",
-        "name-es": "Atómica",
-        "name-ru": "Атомная",
         "isOpen": true,
         "maxPlayers": 4,
         "units": [{"x": 2, "y": 7, "type": "commander", "ownerId": 0}, {

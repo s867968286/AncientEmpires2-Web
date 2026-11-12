@@ -13,8 +13,6 @@
         "type": "skirmish",
         "size": {"width": 9, "height": 12},
         "name": "Siege 3",
-        "name-es": "Cerco 3",
-        "name-ru": "Осада 3",
         "isOpen": true,
         "maxPlayers": 2,
         "units": [{"x": 4, "y": 3, "type": "catapult", "ownerId": 0}, {

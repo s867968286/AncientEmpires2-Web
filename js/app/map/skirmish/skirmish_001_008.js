@@ -12,8 +12,6 @@
         "type": "skirmish",
         "size": {"width": 13, "height": 13},
         "name": "Corners",
-        "name-es": "Esquinas",
-        "name-ru": "Уголки",
         "isOpen": true,
         "maxPlayers": 4,
         "units": [{"x": 0, "y": 0, "type": "commander", "ownerId": 0}, {

@@ -12,8 +12,6 @@
 		"type": "skirmish",
 		"size": {"width": 10, "height": 17},
 		"name": "Wall",
-		"name-es": "Pared",
-		"name-ru": "Стена",
 		"isOpen": true,
 		"maxPlayers": 2,
 		"units": [{"x": 3, "y": 13, "type": "commander", "ownerId": 1}, {"x": 3, "y": 3, "type": "commander", "ownerId": 0}],

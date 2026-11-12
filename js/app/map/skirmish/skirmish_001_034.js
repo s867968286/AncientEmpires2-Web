@@ -13,8 +13,6 @@
         "type": "skirmish",
         "size": {"width": 14, "height": 14},
         "name": "Principality",
-        "name-es": "Principado",
-        "name-ru": "Княжества",
         "isOpen": true,
         "maxPlayers": 3,
         "units": [{"x": 7, "y": 0, "type": "commander", "ownerId": 0}, {

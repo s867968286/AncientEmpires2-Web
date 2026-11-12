@@ -14,8 +14,6 @@
 		size: {width: 15, height: 15},
 		maxPlayers: 2,
 		name: 'Peak island',
-		'name-es': 'Cúspide de la isla',
-		'name-ru': 'Остров пик',
 		units: [
 			{x: 7, y: 3, type: 'commander', ownerId: 0},
 			{x: 7, y: 11, type: 'commander', ownerId: 1}

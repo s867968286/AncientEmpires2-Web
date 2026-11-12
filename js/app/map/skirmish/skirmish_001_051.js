@@ -12,8 +12,6 @@
         "type": "skirmish",
         "size": {"width": 17, "height": 17},
         "name": "Meeting of the clans",
-        "name-es": "Reunión de los clanes",
-        "name-ru": "Собрание кланов",
         "isOpen": true,
         "maxPlayers": 4,
         "units": [{"x": 0, "y": 13, "type": "commander", "ownerId": 0}, {

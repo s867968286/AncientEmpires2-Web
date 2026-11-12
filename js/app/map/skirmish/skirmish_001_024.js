@@ -13,8 +13,6 @@
         "type": "skirmish",
         "size": {"width": 15, "height": 12},
         "name": "Forest trail",
-        "name-es": "Rastro del bosque",
-        "name-ru": "Лесные тропы",
         "isOpen": true,
         "maxPlayers": 2,
         "units": [{"x": 0, "y": 4, "type": "commander", "ownerId": 1}, {

@@ -12,8 +12,6 @@
         "type": "skirmish",
         "size": {"width": 16, "height": 16},
         "name": "Tract",
-        "name-es": "Tracto",
-        "name-ru": "Тракт",
         "isOpen": true,
         "maxPlayers": 4,
         "units": [{"x": 5, "y": 1, "type": "commander", "ownerId": 0}, {

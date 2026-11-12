@@ -14,8 +14,6 @@
 		size: {width: 16, height: 10},
 		maxPlayers: 2,
 		name: 'The crossing',
-		'name-es': 'El cruce',
-		'name-ru': 'Пересечение',
 		units: [
 			{x: 1, y: 1, type: 'commander', ownerId: 0},
 			{x: 14, y: 6, type: 'commander', ownerId: 1}

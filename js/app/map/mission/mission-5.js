@@ -6,24 +6,14 @@
 	/*global */
 
 	var langEn = win.APP.languages.en,
-		langRu = win.APP.languages.ru || win.APP.languages.en,
-		langEs = win.APP.languages.es || win.APP.languages.en,
 		langZh = win.APP.languages.zh,
 		langEnExtra = {
 			name: 'ESCORT DUTY',
 			objective: 'Deliver the Crystal south to the city of Thorin. King Galamar must survive.'
 		},
-		langRuExtra = {
-			name: 'СЛУЖБА ЭСКОРТА',
-			objective: 'Доставить Кристалл на юг в город Торин. Король Галамар должен выжить.'
-		},
-		langEsExtra = {
-			name: 'EL DEBER DE ESCOLTA',
-			objective: 'Entrega el Cristal al sur de la ciudad de Thorin. El Rey Galamar debe sobrevivir.'
-		},
 		langZhExtra = {
 			name: '护航任务',
-			objective: '保护水晶成功运送，格拉玛必须生存。'
+			objective: '把水晶护送到南方的索林城，格拉玛必须存活。'
 		};
 
 	win.APP.maps.mission_001_005 = {
@@ -112,146 +102,8 @@
 		],
 
 		// es
-		'name-es': langEsExtra.name,
-		'objective-es': langEsExtra.objective,
-		'startBriefing-es': [
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: 'Camino hacia Thorin'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Su Majestad, No me gusta como luce este bosque, ¡debemos ser cuidadosos!',
-					img: 'i/face/soldier.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 11 , y: 1 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Muy bien, Capitán. Seguiremos este camino y nos mantendremos en guardia.',
-					img: 'i/face/galamar.png'
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langEsExtra.name,
-					text: langEsExtra.objective
-				}
-			}
-		],
-		'n1Briefing-es': [
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¡Emboscada! ¡Protejan el Cristal a cualquier costo!',
-					img: 'i/face/soldier.png'
-				}
-			}
-
-		],
-		'endBriefing-es': [
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langEs.missionComplete
-				},
-				playSound: {
-					sound: 'victory.mp3',
-					road: 0,
-					isLoop: false
-				},
-				onHide: {
-					fn: 'openMap',
-					args: ['mission_001_006', { type: 'mission' }]
-				}
-			}
-		],
 
 		// ru
-		'name-ru': langRuExtra.name,
-		'objective-ru': langRuExtra.objective,
-		'startBriefing-ru': [
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: 'Путь в Торин'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Ваше Высочество, мне не нравится, как выглядит этот лес, мы должны быть осторожны!',
-					img: 'i/face/soldier.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 11 , y: 1 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Очень хорошо, Капитан. Давайте проследуем этим путем и останемся под защитой нашей охраны.',
-					img: 'i/face/galamar.png'
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langRuExtra.name,
-					text: langRuExtra.objective
-				}
-			}
-		],
-		'n1Briefing-ru': [
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Засада! Защитите Кристалл любой ценой!',
-					img: 'i/face/soldier.png'
-				}
-			}
-
-		],
-		'endBriefing-ru': [
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langRu.missionComplete
-				},
-				playSound: {
-					sound: 'victory.mp3',
-					road: 0,
-					isLoop: false
-				},
-				onHide: {
-					fn: 'openMap',
-					args: ['mission_001_006', { type: 'mission' }]
-				}
-			}
-		],
 
 		// ru
 		'name-zh': langZhExtra.name,
@@ -268,7 +120,7 @@
 				from: 'right',
 				cssClass: 'briefing',
 				popupData: {
-					text: '上帝啊，我并不喜欢这个森林，警戒！',
+					text: '殿下，我不喜欢这片森林的样子，我们必须小心！',
 					img: 'i/face/soldier.png'
 				},
 				onShow: {

@@ -14,8 +14,6 @@
 		size: {width: 13, height: 13},
 		maxPlayers: 2,
 		name: 'Liberty port',
-		'name-es': 'Puerto de la libertad',
-		'name-ru': 'Порт свободы',
 		units: [
 			{x: 1, y: 1, type: 'commander', ownerId: 0},
 			{x: 11, y: 1, type: 'commander', ownerId: 1}

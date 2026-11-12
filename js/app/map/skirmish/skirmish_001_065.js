@@ -12,8 +12,6 @@
 		"type": "skirmish",
 		"size": {"width": 17, "height": 16},
 		"name": "Water explosion",
-		"name-es": "Explosión del agua",
-		"name-ru": "Водный взрыв",
 		"isOpen": true,
 		"maxPlayers": 4,
 		"units": [{"x": 1, "y": 14, "type": "commander", "ownerId": 0}, {"x": 3, "y": 8, "type": "commander", "ownerId": 1}, {"x": 13, "y": 6, "type": "commander", "ownerId": 2}, {"x": 15, "y": 1, "type": "commander", "ownerId": 3}],

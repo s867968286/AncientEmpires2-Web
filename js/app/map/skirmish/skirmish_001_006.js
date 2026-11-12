@@ -14,8 +14,6 @@
 		size: {width: 15, height: 12},
 		maxPlayers: 3,
 		name: 'Frozen friends',
-		'name-es': 'Amigos congelados',
-		'name-ru': 'Холодные друзья',
 		units: [
 			{x: 2, y: 1, type: 'commander', ownerId: 0},
 			{x: 7, y: 10, type: 'commander', ownerId: 1},

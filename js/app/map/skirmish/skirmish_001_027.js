@@ -13,8 +13,6 @@
         "type": "skirmish",
         "size": {"width": 12, "height": 12},
         "name": "Accuracy",
-        "name-es": "Exactitud",
-        "name-ru": "Точность",
         "isOpen": true,
         "maxPlayers": 2,
         "units": [{"x": 6, "y": 3, "type": "catapult", "ownerId": 0}, {

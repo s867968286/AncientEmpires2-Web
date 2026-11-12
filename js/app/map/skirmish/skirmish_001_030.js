@@ -13,8 +13,6 @@
         "type": "skirmish",
         "size": {"width": 13, "height": 13},
         "name": "Swords",
-        "name-es": "Espadas",
-        "name-ru": "Шпаги",
         "isOpen": true,
         "maxPlayers": 2,
         "units": [{"x": 4, "y": 4, "type": "commander", "ownerId": 0}, {

@@ -6,24 +6,14 @@
 	/*global */
 
 	var langEn = win.APP.languages.en,
-		langRu = win.APP.languages.ru || win.APP.languages.en,
-		langEs = win.APP.languages.es || win.APP.languages.en,
 		langZh = win.APP.languages.zh,
 		langEnExtra = {
 			name: 'RENDEZVOUS',
 			objective: 'Carve a path to the west through the enemy troops, defeat their commander and occupy all castles! Galamar and Valadorn must survive.'
 		},
-		langRuExtra = {
-			name: 'ВСТРЕЧА',
-			objective: 'Пробить путь на запад через вражеские войска, убить их командира и занять все замки! Король Галамар и Король Валадорн должны выжить.'
-		},
-		langEsExtra = {
-			name: 'REUNIÓN',
-			objective: 'Tallar un camino hacia el oeste a través de las tropas enemigas, derrotar a su comandante y ocupar todos los castillos! Galamar y Valadorn deben sobrevivir.'
-		},
 		langZhExtra = {
 			name: '会师',
-			objective: '穿过敌方部队，占领他们的城堡并击败所有敌人。格拉玛与渥拉顿必须存活。'
+			objective: '向西穿过敌军，击败他们的指挥官并占领所有城堡！格拉玛与渥拉顿必须存活。'
 		};
 
 	win.APP.maps.mission_001_007 = {
@@ -133,184 +123,8 @@
 		],
 
 		// es
-		'name-es': langEsExtra.name,
-		'objective-es': langEsExtra.objective,
-		'startBriefing-es': [
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: 'Fuera de la Ciudad'
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langEsExtra.name,
-					text: langEsExtra.objective
-				}
-			}
-		],
-		'n1Briefing-es': [
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¡Corran, lamentables humanos, antes de que sea demasiado tarde!',
-					img: 'i/face/demon-lord.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 0, y: 8 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Las fuerzas enemigas lucen formidables, recomiendo una retirada.',
-					img: 'i/face/soldier.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 14, y: 7 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¡No tenemos otra opción mas que atacar!',
-					img: 'i/face/galamar.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¡Galamar! ¡Venimos los más ráído que pudimos! ¡Permitenos pelear lado a lado!',
-					img: 'i/face/valadorn.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 13, y: 16 }]
-				}
-			}
-
-		],
-		'endBriefing-es': [
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langEs.missionComplete
-				},
-				playSound: {
-					sound: 'victory.mp3',
-					road: 0,
-					isLoop: false
-				},
-				onHide: {
-					fn: 'openMap',
-					args: ['mission_001_008', { type: 'mission' }]
-				}
-			}
-		],
 
 		// ru
-		'name-ru': langRuExtra.name,
-		'objective-ru': langRuExtra.objective,
-		'startBriefing-ru': [
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: 'За Городом'
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langRuExtra.name,
-					text: langRuExtra.objective
-				}
-			}
-		],
-		'n1Briefing-ru': [
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Беги, жалкий человечишко, пока еще не слишком поздно!',
-					img: 'i/face/demon-lord.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 0, y: 8 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Вражеские войска выглядят угрожающе, я рекомендую отступить.',
-					img: 'i/face/soldier.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 14, y: 7 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'У нас нет иного выбора кроме атаки!',
-					img: 'i/face/galamar.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Галамар! Мы пришли так быстро как могли! Будем сражаться бок о бок!',
-					img: 'i/face/valadorn.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 13, y: 16 }]
-				}
-			}
-
-		],
-		'endBriefing-ru': [
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langRu.missionComplete
-				},
-				playSound: {
-					sound: 'victory.mp3',
-					road: 0,
-					isLoop: false
-				},
-				onHide: {
-					fn: 'openMap',
-					args: ['mission_001_008', { type: 'mission' }]
-				}
-			}
-		],
 
 		// zh
 		'name-zh': langZhExtra.name,

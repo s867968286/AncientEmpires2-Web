@@ -13,8 +13,6 @@
         "type": "skirmish",
         "size": {"width": 8, "height": 8},
         "name": "Chess 2",
-        "name-es": "Ajedrez 2",
-        "name-ru": "Шахматы 2",
         "isOpen": true,
         "maxPlayers": 2,
         "units": [{"x": 4, "y": 0, "type": "commander", "ownerId": 0}, {

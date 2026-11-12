@@ -12,8 +12,6 @@
         "type": "skirmish",
         "size": {"width": 17, "height": 16},
         "name": "Double punch",
-        "name-es": "Doble golpe",
-        "name-ru": "Двойной удар",
         "isOpen": true,
         "maxPlayers": 4,
         "units": [{"x": 8, "y": 2, "type": "commander", "ownerId": 3}, {

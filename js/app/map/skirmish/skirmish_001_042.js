@@ -12,8 +12,6 @@
         "type": "skirmish",
         "size": {"width": 14, "height": 14},
         "name": "Invasion",
-        "name-es": "Invasión",
-        "name-ru": "Вторжение",
         "isOpen": true,
         "maxPlayers": 4,
         "units": [{"x": 0, "y": 0, "type": "commander", "ownerId": 0}, {

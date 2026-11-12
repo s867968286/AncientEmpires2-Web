@@ -13,8 +13,6 @@
         "type": "skirmish",
         "size": {"width": 11, "height": 16},
         "name": "Duel",
-        "name-es": "Duelo",
-        "name-ru": "Дуэль",
         "isOpen": true,
         "maxPlayers": 2,
         "units": [{"x": 5, "y": 1, "type": "commander", "ownerId": 0}, {

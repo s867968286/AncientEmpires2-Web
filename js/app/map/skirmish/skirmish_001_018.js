@@ -13,8 +13,6 @@
         "type": "skirmish",
         "size": {"width": 15, "height": 15},
         "name": "Mill",
-        "name-es": "Molino",
-        "name-ru": "Мельница",
         "isOpen": true,
         "maxPlayers": 4,
         "units": [{"x": 1, "y": 1, "type": "commander", "ownerId": 0}, {

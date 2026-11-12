@@ -12,8 +12,6 @@
 		"type": "skirmish",
 		"size": {"width": 10, "height": 12},
 		"name": "No release",
-		"name-es": "Sin autorización",
-		"name-ru": "Без выхода",
 		"isOpen": true,
 		"maxPlayers": 4,
 		"units": [{"x": 3, "y": 4, "type": "commander", "ownerId": 0}, {"x": 3, "y": 7, "type": "commander", "ownerId": 1}, {"x": 6, "y": 4, "type": "commander", "ownerId": 2}, {"x": 6, "y": 7, "type": "commander", "ownerId": 3}],

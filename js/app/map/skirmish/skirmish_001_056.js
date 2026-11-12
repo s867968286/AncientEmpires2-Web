@@ -12,8 +12,6 @@
 		"type": "skirmish",
 		"size": {"width": 17, "height": 17},
 		"name": "Malaysia",
-		"name-es": "Malasia",
-		"name-ru": "Малайзия",
 		"isOpen": true,
 		"maxPlayers": 2,
 		"units": [{"x": 0, "y": 0, "type": "commander", "ownerId": 0}, {"x": 16, "y": 16, "type": "commander", "ownerId": 1}],

@@ -12,8 +12,6 @@
 		"type": "skirmish",
 		"size": {"width": 15, "height": 13},
 		"name": "Cross",
-		"name-es": "Cruzar",
-		"name-ru": "Кросс",
 		"isOpen": true,
 		"maxPlayers": 2,
 		"units": [

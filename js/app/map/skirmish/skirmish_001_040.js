@@ -12,8 +12,6 @@
         "type": "skirmish",
         "size": {"width": 15, "height": 12},
         "name": "Pool of blood",
-        "name-es": "Charco de sangre",
-        "name-ru": "Бассейн крови",
         "isOpen": true,
         "maxPlayers": 4,
         "units": [{"x": 0, "y": 11, "type": "commander", "ownerId": 0}, {

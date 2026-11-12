@@ -12,8 +12,6 @@
 		"type": "skirmish",
 		"size": {"width": 17, "height": 17},
 		"name": "Rabies",
-		"name-es": "Rabia",
-		"name-ru": "Бешенство",
 		"isOpen": true,
 		"maxPlayers": 4,
 		"units": [{"x": 0, "y": 0, "type": "commander", "ownerId": 0}, {"x": 16, "y": 0, "type": "commander", "ownerId": 1}, {"x": 0, "y": 16, "type": "commander", "ownerId": 2}, {"x": 16, "y": 16, "type": "commander", "ownerId": 3}],

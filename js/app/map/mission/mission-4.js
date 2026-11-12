@@ -6,20 +6,10 @@
 	/*global */
 
 	var langEn = win.APP.languages.en,
-		langRu = win.APP.languages.ru || win.APP.languages.en,
-		langEs = win.APP.languages.es || win.APP.languages.en,
 		langZh = win.APP.languages.zh,
 		langEnExtra = {
 			name: 'REINFORCEMENTS',
 			objective: 'Protect the Temple of Life - destroy all enemy units, occupy the enemy castle!'
-		},
-		langRuExtra = {
-			name: 'ПОДКРЕПЛЕНИЕ',
-			objective: 'Защитить Храм Жизни - уничтожить все вражеские единицы, занять вражеский замок!'
-		},
-		langEsExtra = {
-			name: 'REFUERZOS',
-			objective: 'Proteje el Templo de la Vida - ¡Destruye a todas las unidades enemigas, ocupa el castillo enemigo! '
 		},
 		langZhExtra = {
 			name: '援军',
@@ -166,246 +156,8 @@
 		],
 
 		// es
-		'name-es': langEsExtra.name,
-		'objective-es': langEsExtra.objective,
-		'startBriefing-es': [
-			{
-				popupName: 'story',
-				cssClass: 'full-screen',
-				popupData: {
-					content: langEs.story.list[3]
-				},
-				playSound: {
-					sound: 'bg-story.mp3',
-					road: 0,
-					isLoop: true
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: 'El Templo de la Vida'
-				},
-				playSound: {
-					sound: 'bg-good.mp3',
-					road: 0,
-					isLoop: true
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¡Su Majestad, gracias a dios está aquí! ¡Por favor ayúdenos a proteger el Cristal!',
-					img: 'i/face/tamplier.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 7 , y: 1 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Solamente en las fortalezas de Thorin el Cristal estará a salvo. Debemos llevarlo allí.',
-					img: 'i/face/galamar.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¡Su Majestad, nuestros exploradores reportan tropas enemigas cercanas! ',
-					img: 'i/face/soldier.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¡Están destruyendo nuestros edificios para mermar nuestro suministro de oro! ¡Deben ser detenidos!',
-					img: 'i/face/soldier.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¡Capitán, tenemos que salvar el Cristal, preparen las tropas para la batalla!',
-					img: 'i/face/galamar.png'
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langEsExtra.name,
-					text: langEsExtra.objective
-				}
-			}
-		],
-		'endBriefing-es': [
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Su Majestad, hemos detenido el ataque.',
-					img: 'i/face/soldier.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¡Bien hecho, Capitán! ¡Prepare las tropas marcharemos hacia Thorin!',
-					img: 'i/face/galamar.png'
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langEs.missionComplete
-				},
-				playSound: {
-					sound: 'victory.mp3',
-					road: 0,
-					isLoop: false
-				},
-				onHide: {
-					fn: 'openMap',
-					args: ['mission_001_005', { type: 'mission' }]
-				}
-			}
-		],
 
 		// ru
-		'name-ru': langRuExtra.name,
-		'objective-ru': langRuExtra.objective,
-		'startBriefing-ru': [
-			{
-				popupName: 'story',
-				cssClass: 'full-screen',
-				popupData: {
-					content: langRu.story.list[3]
-				},
-				playSound: {
-					sound: 'bg-story.mp3',
-					road: 0,
-					isLoop: true
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: 'Храм Жизни'
-				},
-				playSound: {
-					sound: 'bg-good.mp3',
-					road: 0,
-					isLoop: true
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Ваше Величество, благодаря Создателю вы здесь! Пожалуйста, помогите нам защитить Кристалл!',
-					img: 'i/face/tamplier.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 7 , y: 1 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Только в хорошо защищенных крепостях Торина Кристалл будет в безопасности. Мы должны принести его туда.',
-					img: 'i/face/galamar.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Ваше Величество, наши разведчики докладывают, что вражеские войска неподалеку!',
-					img: 'i/face/soldier.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Они разрушают наши здания, чтобы нанести ущерб нашим поставкам золота! Она должны быть остановлены!',
-					img: 'i/face/soldier.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Капитан, мы должны спасти Кристалл, готовьте войска к битве!',
-					img: 'i/face/galamar.png'
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langRuExtra.name,
-					text: langRuExtra.objective
-				}
-			}
-		],
-		'endBriefing-ru': [
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Ваше величество, мы остановили атаку.',
-					img: 'i/face/soldier.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Хорошая работа, Капитан! Приготовьте войска к маршу в Торин!',
-					img: 'i/face/galamar.png'
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langRu.missionComplete
-				},
-				playSound: {
-					sound: 'victory.mp3',
-					road: 0,
-					isLoop: false
-				},
-				onHide: {
-					fn: 'openMap',
-					args: ['mission_001_005', { type: 'mission' }]
-				}
-			}
-		],
 
 		// zh
 		'name-zh': langZhExtra.name,
@@ -439,7 +191,7 @@
 				from: 'right',
 				cssClass: 'briefing',
 				popupData: {
-					text: '感谢上帝！你到了！请帮助我们保护水晶！',
+					text: '陛下，感谢造物主，您来了！请帮我们保护水晶！',
 					img: 'i/face/tamplier.png'
 				},
 				onShow: {
@@ -453,7 +205,7 @@
 				from: 'left',
 				cssClass: 'briefing',
 				popupData: {
-					text: '只有严密防守才能保护住水晶，我们不能放松警惕.',
+					text: '只有把水晶送到索林重兵防守的堡垒里才安全，我们必须把它送到那里。',
 					img: 'i/face/galamar.png'
 				}
 			},
@@ -462,7 +214,7 @@
 				from: 'right',
 				cssClass: 'briefing',
 				popupData: {
-					text: '长官！我们的探子发现附近有敌方的部队!',
+					text: '陛下！斥候报告附近有敌军！',
 					img: 'i/face/soldier.png'
 				}
 			},
@@ -498,7 +250,7 @@
 				from: 'right',
 				cssClass: 'briefing',
 				popupData: {
-					text: '感谢上帝，我们保护住了水晶。',
+					text: '陛下，我们已经挡住了进攻。',
 					img: 'i/face/soldier.png'
 				}
 			},
@@ -507,7 +259,7 @@
 				from: 'left',
 				cssClass: 'briefing',
 				popupData: {
-					text: '做得好长官！欢呼胜利吧！',
+					text: '做得好，长官！准备军队前往索林！',
 					img: 'i/face/galamar.png'
 				}
 			},

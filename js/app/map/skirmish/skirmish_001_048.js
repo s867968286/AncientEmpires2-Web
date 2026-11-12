@@ -12,8 +12,6 @@
         "type": "skirmish",
         "size": {"width": 16, "height": 15},
         "name": "Classic 1",
-        "name-es": "Classic 1",
-        "name-ru": "Классика 1",
         "isOpen": true,
         "maxPlayers": 4,
         "units": [{"x": 2, "y": 6, "type": "commander", "ownerId": 0}, {

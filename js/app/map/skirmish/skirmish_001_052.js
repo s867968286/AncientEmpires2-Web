@@ -12,8 +12,6 @@
         "type": "skirmish",
         "size": {"width": 16, "height": 16},
         "name": "Tactics",
-        "name-es": "Táctica",
-        "name-ru": "Тактика",
         "isOpen": true,
         "maxPlayers": 4,
         "units": [{"x": 7, "y": 2, "type": "soldier", "ownerId": 3}, {

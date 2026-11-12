@@ -12,8 +12,6 @@
         "type": "skirmish",
         "size": {"width": 14, "height": 14},
         "name": "City",
-        "name-es": "Ciudad",
-        "name-ru": "Город",
         "isOpen": true,
         "maxPlayers": 4,
         "units": [{"x": 0, "y": 6, "type": "commander", "ownerId": 0}, {

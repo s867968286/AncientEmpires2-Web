@@ -12,8 +12,6 @@
 		"type": "skirmish",
 		"size": {"width": 17, "height": 17},
 		"name": "Quick end",
-		"name-es": "Final rápida",
-		"name-ru": "Быстрый конец",
 		"isOpen": true,
 		"maxPlayers": 4,
 		"units": [{"x": 4, "y": 6, "type": "commander", "ownerId": 0}, {"x": 11, "y": 10, "type": "commander", "ownerId": 1}, {"x": 11, "y": 6, "type": "commander", "ownerId": 2}, {"x": 4, "y": 10, "type": "commander", "ownerId": 3}],

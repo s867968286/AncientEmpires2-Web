@@ -13,8 +13,6 @@
         "type": "skirmish",
         "size": {"width": 17, "height": 12},
         "name": "Classic 2",
-        "name-es": "Classic 2",
-        "name-ru": "Классика 2",
         "isOpen": true,
         "maxPlayers": 3,
         "units": [{"x": 15, "y": 9, "type": "commander", "ownerId": 0}, {

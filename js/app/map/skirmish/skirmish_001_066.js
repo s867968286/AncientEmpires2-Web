@@ -12,8 +12,6 @@
 		"type": "skirmish",
 		"size": {"width": 10, "height": 12},
 		"name": "War of ages",
-		"name-es": "Guerra de los tiempos",
-		"name-ru": "Война века",
 		"isOpen": true,
 		"maxPlayers": 4,
 		"units": [{"x": 0, "y": 0, "type": "commander", "ownerId": 3}, {"x": 9, "y": 11, "type": "commander", "ownerId": 1}, {"x": 0, "y": 11, "type": "commander", "ownerId": 2}, {"x": 9, "y": 0, "type": "commander", "ownerId": 0}],

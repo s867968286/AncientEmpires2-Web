@@ -12,8 +12,6 @@
         "type": "skirmish",
         "size": {"width": 15, "height": 12},
         "name": "Water tropics",
-        "name-es": "Trópicos agua",
-        "name-ru": "Водные тропики",
         "isOpen": true,
         "maxPlayers": 4,
         "units": [{"x": 13, "y": 9, "type": "commander", "ownerId": 0}, {

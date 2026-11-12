@@ -14,8 +14,6 @@
 		size: {width: 15, height: 15},
 		maxPlayers: 2,
 		name: 'Island cross',
-		'name-es': 'Cruz island',
-		'name-ru': 'Остров крест',
 		units: [
 			{type: 'commander', x: 13, y: 1, ownerId: 0},
 			{type: 'commander', x: 1, y: 13, ownerId: 1}

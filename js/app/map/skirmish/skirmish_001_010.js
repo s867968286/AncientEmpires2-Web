@@ -14,8 +14,6 @@
 		size: {width: 15, height: 15},
 		maxPlayers: 4,
 		name: 'Waterways',
-		'name-es': 'Vía fluvial',
-		'name-ru': 'Водоемы',
 		units: [
 			{x: 2, y: 2, type: 'commander', ownerId: 0},
 			{x: 12, y: 3, type: 'commander', ownerId: 1},

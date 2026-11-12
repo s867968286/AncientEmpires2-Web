@@ -6,24 +6,14 @@
 	/*global */
 
 	var langEn = win.APP.languages.en,
-		langRu = win.APP.languages.ru || win.APP.languages.en,
-		langEs = win.APP.languages.es || win.APP.languages.en,
 		langZh = win.APP.languages.zh,
 		langEnExtra = {
 			name: 'TO THE RESCUE',
 			objective: 'Destroy all attacking enemy troops, occupy both castles.'
 		},
-		langRuExtra = {
-			name: 'К СПАСЕНИЮ',
-			objective: 'Уничтожить все вражеские войска, занять оба замка.'
-		},
-		langEsExtra = {
-			name: 'AL RESCATE',
-			objective: 'Destruye a todas las tropas enemigas, ocupa ambos castillos.'
-		},
 		langZhExtra = {
 			name: '火速营救',
-			objective: '摧毁所有地方部队，占领所有城堡.'
+			objective: '摧毁所有敌方部队，占领两座城堡。'
 		};
 
 	win.APP.maps.mission_001_002 = {
@@ -194,300 +184,8 @@
 
 
 		// es
-		'name-es': langEsExtra.name,
-		'objective-es': langEsExtra.objective,
-		'help-es': [
-			langEs.helpList[2],
-			langEs.helpList[3]
-		],
-		'startBriefing-es': [
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: 'El Templo de la Sabiduría.'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¿Cómo es esto posible? El Templo de la Sabiduría también está siendo atacado.',
-					img: 'i/face/valadorn.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 8, y: 9 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Bien, bien... ¿Valador, supongo? Preparate para ser derrotado.',
-					img: 'i/face/demon-lord.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 12, y: 3 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¡Señor, una parte de las fuerzas enemigas está retirandose!',
-					img: 'i/face/soldier.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 7 , y: 10 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¡El Cristal de la Sabiduría! ¡No los dejen escapar!',
-					img: 'i/face/tamplier.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¡Mi señor, debemos seguirlos!',
-					img: 'i/face/soldier.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Detengamos el ataque primero. De otra manera los guardias del templo no tendrán oportunidad!',
-					img: 'i/face/valadorn.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 8, y: 9 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Hagamos nuestra base en ese castillo.',
-					img: 'i/face/soldier.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 3 , y: 5 }]
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langEsExtra.name,
-					text: langEsExtra.objective
-				},
-				onHide: {
-					fn: 'autoShowHelpButton'
-				}
-			}
-		],
-		'endBriefing-es': [
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Bien hecho Capitán. Pero no hay tiempo para descansar. El Cristal de la VIda puede estar en peligro. ¡Debemos advertir al rey Galamar!',
-					img: 'i/face/valadorn.png'
-				}
-			},			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Si señor. Prepararé a las tropas.',
-					img: 'i/face/soldier.png'
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langEs.missionComplete
-				},
-				playSound: {
-					sound: 'victory.mp3',
-					road: 0,
-					isLoop: false
-				},
-				onHide: {
-					fn: 'openMap',
-					args: ['mission_001_003', { type: 'mission' }]
-				}
-			}
-		],
 
 		// ru
-		'name-ru': langRuExtra.name,
-		'objective-ru': langRuExtra.objective,
-		'help-ru': [
-			langRu.helpList[2],
-			langRu.helpList[3]
-		],
-		'startBriefing-ru': [
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: 'Храм Мудрости'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Как это может быть? Храм Мудрости тоже атакован!',
-					img: 'i/face/valadorn.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 8, y: 9 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Так, так... Валадорн, предполагаю? Приготовься к поражению!',
-					img: 'i/face/demon-lord.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 12, y: 3 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Сэр, часть вражеских сил отступает!',
-					img: 'i/face/soldier.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 7 , y: 10 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Кристалл Мудрости! Не дайте им уйти!',
-					img: 'i/face/tamplier.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Сэр, мы должны преследовать их!',
-					img: 'i/face/soldier.png'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Давайте сначала остановим атаку. Охрана храма не даст другого шанса!',
-					img: 'i/face/valadorn.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 8, y: 9 }]
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Давайте разобьем лагерь в том замке!',
-					img: 'i/face/soldier.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 3 , y: 5 }]
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langRuExtra.name,
-					text: langRuExtra.objective
-				},
-				onHide: {
-					fn: 'autoShowHelpButton'
-				}
-			}
-		],
-		'endBriefing-ru': [
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Хорошая работа, Капитан. Но у нас нет времени на отдых. Кристалл Жизни все еще в опасности. Мы должны предупредить Короля Галамара!',
-					img: 'i/face/valadorn.png'
-				}
-			},			{
-				popupName: 'briefing',
-				from: 'right',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Да, Сэр. Я приготовлю войска.',
-					img: 'i/face/soldier.png'
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langRu.missionComplete
-				},
-				playSound: {
-					sound: 'victory.mp3',
-					road: 0,
-					isLoop: false
-				},
-				onHide: {
-					fn: 'openMap',
-					args: ['mission_001_003', { type: 'mission' }]
-				}
-			}
-		],
 
 		// zh
 		'name-zh': langZhExtra.name,
@@ -536,7 +234,7 @@
 				from: 'left',
 				cssClass: 'briefing',
 				popupData: {
-					text: '报告！我们发现了一小股地方部队正在接近！',
+					text: '长官，一部分敌军正在撤退！',
 					img: 'i/face/soldier.png'
 				},
 				onShow: {
@@ -568,7 +266,7 @@
 				from: 'left',
 				cssClass: 'briefing',
 				popupData: {
-					text: '让我们先击退对神殿的进攻吧，神殿已经支撑不了多久了。',
+					text: '我们先击退这波进攻，否则神殿守卫根本撑不住！',
 					img: 'i/face/valadorn.png'
 				},
 				onShow: {
@@ -582,7 +280,7 @@
 				from: 'right',
 				cssClass: 'briefing',
 				popupData: {
-					text: '让我们以这个城堡为根基吧',
+					text: '让我们在这座城堡坚守！',
 					img: 'i/face/soldier.png'
 				},
 				onShow: {
@@ -616,7 +314,7 @@
 				from: 'right',
 				cssClass: 'briefing',
 				popupData: {
-					text: '好的，先生，我会让军队做好准备的',
+					text: '好的，先生，我会让军队做好准备。',
 					img: 'i/face/soldier.png'
 				}
 			},

@@ -14,8 +14,6 @@
 		size: {width: 11, height: 19},
 		maxPlayers: 4,
 		name: 'Crossroads',
-		'name-es': 'Cruce de caminos',
-		'name-ru': 'Перекресток',
 		units: [
 			{x: 1, y: 3, type: 'commander', ownerId: 0},
 			{x: 9, y: 3, type: 'commander', ownerId: 1},

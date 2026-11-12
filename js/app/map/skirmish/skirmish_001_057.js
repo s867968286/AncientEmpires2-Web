@@ -12,8 +12,6 @@
 		"type": "skirmish",
 		"size": {"width": 10, "height": 17},
 		"name": "Balance",
-		"name-es": "Equilibrio",
-		"name-ru": "Равновесие",
 		"isOpen": true,
 		"maxPlayers": 2,
 		"units": [{"x": 4, "y": 2, "type": "commander", "ownerId": 0}, {"x": 5, "y": 14, "type": "commander", "ownerId": 1}],

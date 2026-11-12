@@ -12,8 +12,6 @@
         "type": "skirmish",
         "size": {"width": 15, "height": 15},
         "name": "Flood",
-        "name-es": "Inundación",
-        "name-ru": "Потоп",
         "isOpen": true,
         "maxPlayers": 4,
         "units": [{"x": 0, "y": 8, "type": "commander", "ownerId": 0}, {

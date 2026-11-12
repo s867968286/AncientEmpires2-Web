@@ -12,8 +12,6 @@
 		"type": "skirmish",
 		"size": {"width": 16, "height": 14},
 		"name": "David wade",
-		"name-es": "David wade",
-		"name-ru": "Давидов брод",
 		"isOpen": true,
 		"maxPlayers": 4,
 		"units": [{"x": 14, "y": 11, "type": "commander", "ownerId": 3}, {"x": 14, "y": 2, "type": "commander", "ownerId": 2}, {"x": 1, "y": 11, "type": "commander", "ownerId": 1}, {"x": 1, "y": 2, "type": "commander", "ownerId": 0}],

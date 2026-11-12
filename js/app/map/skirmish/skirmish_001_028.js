@@ -13,8 +13,6 @@
         "type": "skirmish",
         "size": {"width": 15, "height": 12},
         "name": "Football",
-        "name-es": "Fútbol",
-        "name-ru": "Футбол",
         "isOpen": true,
         "maxPlayers": 2,
         "units": [{"x": 6, "y": 5, "type": "skeleton", "ownerId": 0}, {

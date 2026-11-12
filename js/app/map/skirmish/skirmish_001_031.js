@@ -13,8 +13,6 @@
         "type": "skirmish",
         "size": {"width": 15, "height": 12},
         "name": "Water wars",
-        "name-es": "Guerras por el agua",
-        "name-ru": "Водные войны",
         "isOpen": true,
         "maxPlayers": 3,
         "units": [{"x": 1, "y": 2, "type": "commander", "ownerId": 0}, {

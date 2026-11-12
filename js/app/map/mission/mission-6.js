@@ -6,20 +6,10 @@
 	/*global */
 
 	var langEn = win.APP.languages.en,
-		langRu = win.APP.languages.ru || win.APP.languages.en,
-		langEs = win.APP.languages.es || win.APP.languages.en,
 		langZh = win.APP.languages.zh,
 		langEnExtra = {
 			name: 'NORTHBOUND',
 			objective: 'Occupy the enemy castle and destroy all enemy troops. Valadorn must survive.'
-		},
-		langRuExtra = {
-			name: 'ИДУЩИЙ НА СЕВЕР',
-			objective: 'Занять вражеский замок и уничтожить все вражеские войска. Король Валадорн должен выжить.'
-		},
-		langEsExtra = {
-			name: 'A DIRECCIÓN NORTE',
-			objective: 'Ocupa el castillo enemigo y derrota a todas las tropas enemigas. Valador debe sobrevivir.'
 		},
 		langZhExtra = {
 			name: '北行',
@@ -103,124 +93,8 @@
 		],
 
 		// es
-		'name-es': langEsExtra.name,
-		'objective-es': langEsExtra.objective,
-		'startBriefing-es': [
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: 'Las Puertas de Thorin'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: '¡El enemigo está planeando atacar al Rey Galamar antes de que alcanze Thorin! ¡Tenemos que derrotarlos!',
-					img: 'i/face/valadorn.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 5, y: 17 }]
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langEsExtra.name,
-					text: langEsExtra.objective
-				}
-			}
-
-		],
-		'endBriefing-es': [
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Dirijamonos hacia el Norte para encontrarnos con Galamar. ¡Las tropas enemigas conocen sobre sus planes y puede que necesite ayuda!',
-					img: 'i/face/valadorn.png'
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langEs.missionComplete
-				},
-				playSound: {
-					sound: 'victory.mp3',
-					road: 0,
-					isLoop: false
-				},
-				onHide: {
-					fn: 'openMap',
-					args: ['mission_001_007', { type: 'mission' }]
-				}
-			}
-		],
 
 		// ru
-		'name-ru': langRuExtra.name,
-		'objective-ru': langRuExtra.objective,
-		'startBriefing-ru': [
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: 'Ворота Торина'
-				}
-			},
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Враг планирует атаковать Короля Галамара, пока он не достигнет Торина. Мы должны уничтожить их!',
-					img: 'i/face/valadorn.png'
-				},
-				onShow: {
-					fn: 'centerToXY',
-					context: 'parentView',
-					args: [{ x: 5, y: 17 }]
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langRuExtra.name,
-					text: langRuExtra.objective
-				}
-			}
-
-		],
-		'endBriefing-ru': [
-			{
-				popupName: 'briefing',
-				from: 'left',
-				cssClass: 'briefing',
-				popupData: {
-					text: 'Давайте поспешим на Север, чтобы встретиться с Галамаром. Враги знают о его планах и ему может потребоваться наша помощь!',
-					img: 'i/face/valadorn.png'
-				}
-			},
-			{
-				popupName: 'simple-notification',
-				popupData: {
-					header: langRu.missionComplete
-				},
-				playSound: {
-					sound: 'victory.mp3',
-					road: 0,
-					isLoop: false
-				},
-				onHide: {
-					fn: 'openMap',
-					args: ['mission_001_007', { type: 'mission' }]
-				}
-			}
-		],
 
 		// zh
 		'name-zh': langZhExtra.name,
@@ -237,7 +111,7 @@
 				from: 'left',
 				cssClass: 'briefing',
 				popupData: {
-					text: '敌人正计划着攻击格拉玛来阻止他运送水晶，我们必须击败他们！',
+					text: '敌人正打算在格拉玛抵达索林之前攻击他！我们必须击败他们！',
 					img: 'i/face/valadorn.png'
 				},
 				onShow: {

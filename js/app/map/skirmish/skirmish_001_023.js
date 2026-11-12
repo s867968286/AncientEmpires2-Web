@@ -13,8 +13,6 @@
         "type": "skirmish",
         "size": {"width": 15, "height": 12},
         "name": "Labyrinth",
-        "name-es": "Laberinto",
-        "name-ru": "Лабиринт",
         "isOpen": true,
         "maxPlayers": 2,
         "units": [{"x": 14, "y": 0, "type": "commander", "ownerId": 1}, {

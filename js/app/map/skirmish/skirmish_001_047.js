@@ -12,8 +12,6 @@
         "type": "skirmish",
         "size": {"width": 15, "height": 15},
         "name": "Insulation",
-        "name-es": "Aislamiento",
-        "name-ru": "Изоляция",
         "isOpen": true,
         "maxPlayers": 4,
         "units": [{"x": 7, "y": 2, "type": "commander", "ownerId": 0}, {

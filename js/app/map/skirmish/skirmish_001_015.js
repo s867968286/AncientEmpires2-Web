@@ -14,8 +14,6 @@
 		size: {width: 19, height: 19},
 		maxPlayers: 4,
 		name: 'Shadow lands',
-		'name-es': 'Tierras sombrías',
-		'name-ru': 'Теневые земли',
 		units: [
 			{x: 9, y: 1, type: 'commander', ownerId: 0},
 			{x: 2, y: 7, type: 'commander', ownerId: 1},

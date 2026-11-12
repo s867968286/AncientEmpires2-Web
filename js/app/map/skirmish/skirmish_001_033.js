@@ -13,8 +13,6 @@
         "type": "skirmish",
         "size": {"width": 11, "height": 17},
         "name": "Glue",
-        "name-es": "Pegamento",
-        "name-ru": "Клей",
         "isOpen": true,
         "maxPlayers": 3,
         "units": [{"x": 2, "y": 3, "type": "commander", "ownerId": 0}, {

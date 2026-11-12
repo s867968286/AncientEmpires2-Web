@@ -12,8 +12,6 @@
         "type": "skirmish",
         "size": {"width": 11, "height": 12},
         "name": "Old castle",
-        "name-es": "Antiguo castillo",
-        "name-ru": "Старый замок",
         "isOpen": true,
         "maxPlayers": 3,
         "units": [{"x": 1, "y": 2, "type": "commander", "ownerId": 0}, {

@@ -12,8 +12,6 @@
         "type": "skirmish",
         "size": {"width": 17, "height": 12},
         "name": "Medium wave",
-        "name-es": "Onda media",
-        "name-ru": "Средняя волна",
         "isOpen": true,
         "maxPlayers": 3,
         "units": [{"x": 1, "y": 10, "type": "commander", "ownerId": 0}, {

@@ -12,8 +12,6 @@
         "type": "skirmish",
         "size": {"width": 15, "height": 15},
         "name": "Nuclear",
-        "name-es": "Nuclear",
-        "name-ru": "Ядерная",
         "isOpen": true,
         "maxPlayers": 4,
         "units": [{"x": 1, "y": 5, "type": "commander", "ownerId": 0}, {

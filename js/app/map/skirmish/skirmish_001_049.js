@@ -12,8 +12,6 @@
         "type": "skirmish",
         "size": {"width": 12, "height": 13},
         "name": "Cycle",
-        "name-es": "Ciclo",
-        "name-ru": "Круговорот",
         "isOpen": true,
         "maxPlayers": 4,
         "units": [{"x": 9, "y": 2, "type": "commander", "ownerId": 0}, {

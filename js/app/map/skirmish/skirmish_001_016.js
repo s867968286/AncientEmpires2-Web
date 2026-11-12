@@ -13,8 +13,6 @@
 		"type": "skirmish",
 		"size": {"width": 15, "height": 12},
 		"name": "Crusade",
-		"name-es": "Cruzada",
-		"name-ru": "Крестовый поход",
 		"isOpen": true,
 		"maxPlayers": 4,
 		"units": [

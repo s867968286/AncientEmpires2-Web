@@ -12,8 +12,6 @@
         "type": "skirmish",
         "size": {"width": 15, "height": 15},
         "name": "Hold position",
-        "name-es": "Mantén la posición",
-        "name-ru": "Держать позиции",
         "isOpen": true,
         "maxPlayers": 4,
         "units": [{"x": 0, "y": 0, "type": "commander", "ownerId": 0}, {

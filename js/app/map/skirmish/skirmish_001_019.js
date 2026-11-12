@@ -13,8 +13,6 @@
         "type": "skirmish",
         "size": {"width": 10, "height": 10},
         "name": "Swamp",
-        "name-es": "Pantano",
-        "name-ru": "Болото",
         "isOpen": true,
         "maxPlayers": 2,
         "units": [{"x": 3, "y": 6, "type": "commander", "ownerId": 1}, {

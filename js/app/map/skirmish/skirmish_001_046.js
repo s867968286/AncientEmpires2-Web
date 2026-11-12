@@ -12,8 +12,6 @@
         "type": "skirmish",
         "size": {"width": 16, "height": 16},
         "name": "The sign of four",
-        "name-es": "El signo de los cuatro",
-        "name-ru": "Знак четырех",
         "isOpen": true,
         "maxPlayers": 4,
         "units": [{"x": 0, "y": 0, "type": "commander", "ownerId": 3}, {

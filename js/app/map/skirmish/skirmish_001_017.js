@@ -13,8 +13,6 @@
         "type": "skirmish",
         "size": {"width": 15, "height": 12},
         "name": "Castle",
-        "name-es": "Castillo",
-        "name-ru": "Замок",
         "isOpen": true,
         "maxPlayers": 4,
         "units": [{"x": 0, "y": 4, "type": "commander", "ownerId": 0}, {

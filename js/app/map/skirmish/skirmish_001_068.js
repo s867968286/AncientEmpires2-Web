@@ -12,8 +12,6 @@
 		"type": "skirmish",
 		"size": {"width": 13, "height": 13},
 		"name": "Roads",
-		"name-es": "Carreteras",
-		"name-ru": "Дороги",
 		"isOpen": true,
 		"maxPlayers": 4,
 		"units": [{"x": 0, "y": 12, "type": "commander", "ownerId": 0}, {"x": 0, "y": 0, "type": "commander", "ownerId": 1}, {"x": 12, "y": 12, "type": "commander", "ownerId": 2}, {"x": 12, "y": 0, "type": "commander", "ownerId": 3}],

@@ -12,8 +12,6 @@
         "type": "skirmish",
         "size": {"width": 12, "height": 12},
         "name": "Road closures",
-        "name-es": "Cierres de carreteras",
-        "name-ru": "Перекрытая дорога",
         "isOpen": true,
         "maxPlayers": 3,
         "units": [{"x": 1, "y": 11, "type": "commander", "ownerId": 0}, {
